@@ -1,9 +1,10 @@
 {
   "version": 2,
-  "dgSpecHash": "8hR7L2IbIvXX3PvGsNg6clIotPtsDV62r1f//9cE0ZtRMXzslYYdLV8cGBg3sl2k+lNlCBIhCh3YXoKNv0vdVQ==",
+  "dgSpecHash": "fXR4nk7jB6HUP1MBQAnuhVId3Qz0slkCt5CzZJ47CXJI3P+b+M8+UBusi8fka60aSwuKIeoFYD0DVxGLe4RD/Q==",
   "success": true,
   "projectFilePath": "/home/rick/Projects/obso/api/Tests/Tests.csproj",
   "expectedPackageFiles": [
+    "/home/rick/.nuget/packages/castle.core/5.1.1/castle.core.5.1.1.nupkg.sha512",
     "/home/rick/.nuget/packages/coverlet.collector/3.1.0/coverlet.collector.3.1.0.nupkg.sha512",
     "/home/rick/.nuget/packages/microsoft.codecoverage/16.11.0/microsoft.codecoverage.16.11.0.nupkg.sha512",
     "/home/rick/.nuget/packages/microsoft.csharp/4.0.1/microsoft.csharp.4.0.1.nupkg.sha512",
@@ -13,6 +14,7 @@
     "/home/rick/.nuget/packages/microsoft.testplatform.objectmodel/16.11.0/microsoft.testplatform.objectmodel.16.11.0.nupkg.sha512",
     "/home/rick/.nuget/packages/microsoft.testplatform.testhost/16.11.0/microsoft.testplatform.testhost.16.11.0.nupkg.sha512",
     "/home/rick/.nuget/packages/microsoft.win32.primitives/4.3.0/microsoft.win32.primitives.4.3.0.nupkg.sha512",
+    "/home/rick/.nuget/packages/moq/4.18.4/moq.4.18.4.nupkg.sha512",
     "/home/rick/.nuget/packages/netstandard.library/1.6.1/netstandard.library.1.6.1.nupkg.sha512",
     "/home/rick/.nuget/packages/newtonsoft.json/9.0.1/newtonsoft.json.9.0.1.nupkg.sha512",
     "/home/rick/.nuget/packages/nuget.frameworks/5.0.0/nuget.frameworks.5.0.0.nupkg.sha512",
@@ -39,6 +41,7 @@
     "/home/rick/.nuget/packages/system.console/4.3.0/system.console.4.3.0.nupkg.sha512",
     "/home/rick/.nuget/packages/system.diagnostics.debug/4.3.0/system.diagnostics.debug.4.3.0.nupkg.sha512",
     "/home/rick/.nuget/packages/system.diagnostics.diagnosticsource/4.3.0/system.diagnostics.diagnosticsource.4.3.0.nupkg.sha512",
+    "/home/rick/.nuget/packages/system.diagnostics.eventlog/6.0.0/system.diagnostics.eventlog.6.0.0.nupkg.sha512",
     "/home/rick/.nuget/packages/system.diagnostics.tools/4.3.0/system.diagnostics.tools.4.3.0.nupkg.sha512",
     "/home/rick/.nuget/packages/system.diagnostics.tracing/4.3.0/system.diagnostics.tracing.4.3.0.nupkg.sha512",
     "/home/rick/.nuget/packages/system.dynamic.runtime/4.0.11/system.dynamic.runtime.4.0.11.nupkg.sha512",

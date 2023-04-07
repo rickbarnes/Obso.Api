@@ -25,3 +25,15 @@
 /home/rick/Projects/obso/api/Api/obj/Debug/net6.0/ref/Api.dll
 /home/rick/Projects/obso/api/Api/obj/Debug/net6.0/Api.pdb
 /home/rick/Projects/obso/api/Api/obj/Debug/net6.0/Api.genruntimeconfig.cache
+/home/rick/Projects/obso/api/Api/bin/Debug/net6.0/IServices.dll
+/home/rick/Projects/obso/api/Api/bin/Debug/net6.0/Services.dll
+/home/rick/Projects/obso/api/Api/bin/Debug/net6.0/IServices.pdb
+/home/rick/Projects/obso/api/Api/bin/Debug/net6.0/Services.pdb
+/home/rick/Projects/obso/api/Api/bin/Debug/net6.0/Engine.dll
+/home/rick/Projects/obso/api/Api/bin/Debug/net6.0/IEngine.dll
+/home/rick/Projects/obso/api/Api/bin/Debug/net6.0/IRepository.dll
+/home/rick/Projects/obso/api/Api/bin/Debug/net6.0/Repository.dll
+/home/rick/Projects/obso/api/Api/bin/Debug/net6.0/Engine.pdb
+/home/rick/Projects/obso/api/Api/bin/Debug/net6.0/Repository.pdb
+/home/rick/Projects/obso/api/Api/bin/Debug/net6.0/IEngine.pdb
+/home/rick/Projects/obso/api/Api/bin/Debug/net6.0/IRepository.pdb

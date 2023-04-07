@@ -1,0 +1,12 @@
+/home/rick/Projects/obso/api/IEngine/bin/Debug/net6.0/IEngine.deps.json
+/home/rick/Projects/obso/api/IEngine/bin/Debug/net6.0/IEngine.dll
+/home/rick/Projects/obso/api/IEngine/bin/Debug/net6.0/ref/IEngine.dll
+/home/rick/Projects/obso/api/IEngine/bin/Debug/net6.0/IEngine.pdb
+/home/rick/Projects/obso/api/IEngine/obj/Debug/net6.0/IEngine.csproj.AssemblyReference.cache
+/home/rick/Projects/obso/api/IEngine/obj/Debug/net6.0/IEngine.GeneratedMSBuildEditorConfig.editorconfig
+/home/rick/Projects/obso/api/IEngine/obj/Debug/net6.0/IEngine.AssemblyInfoInputs.cache
+/home/rick/Projects/obso/api/IEngine/obj/Debug/net6.0/IEngine.AssemblyInfo.cs
+/home/rick/Projects/obso/api/IEngine/obj/Debug/net6.0/IEngine.csproj.CoreCompileInputs.cache
+/home/rick/Projects/obso/api/IEngine/obj/Debug/net6.0/IEngine.dll
+/home/rick/Projects/obso/api/IEngine/obj/Debug/net6.0/ref/IEngine.dll
+/home/rick/Projects/obso/api/IEngine/obj/Debug/net6.0/IEngine.pdb
