@@ -4,19 +4,17 @@ using Amazon.DynamoDBv2.DocumentModel;
 using Amazon.DynamoDBv2.Model;
 using Domain.Board;
 using IRepository.Boards;
+using Microsoft.Extensions.Configuration;
 
 namespace Repository.Board;
 
-public sealed class BoardRepository : IBoardRepository
+public sealed class BoardRepository : BaseRepository, IBoardRepository
 {
-    private readonly IAmazonDynamoDB _dynamoClient;
-
     private readonly string _tableName = "Obso-Production";
 
-    public BoardRepository()
+    public BoardRepository(IConfiguration configuration)
+        : base(configuration)
     {
-
-        this._dynamoClient = new AmazonDynamoDBClient(RegionEndpoint.USEast1);
     }
 
     public async Task<BoardEntity?> GetBoardById(Guid tenantId, Guid boardId)
@@ -49,7 +47,8 @@ public sealed class BoardRepository : IBoardRepository
                 ExclusiveStartKey = lastEvaluatedKey
             };
 
-            var response = await this._dynamoClient.QueryAsync(request);
+
+            var response = await this.Client.QueryAsync(request);
 
             if (response.Items.Count != 0)
             {
@@ -61,10 +60,9 @@ public sealed class BoardRepository : IBoardRepository
         return null;
     }
 
-
     public async Task Add(BoardEntity boardEntity)
     {
-        var table = Table.LoadTable(this._dynamoClient, this._tableName, DynamoDBEntryConversion.V2);
+        var table = Table.LoadTable(this.Client, this._tableName, DynamoDBEntryConversion.V2);
 
         var board = new Document();
 
@@ -77,7 +75,7 @@ public sealed class BoardRepository : IBoardRepository
 
     public async Task Update(BoardEntity boardEntity)
     {
-        var table = Table.LoadTable(this._dynamoClient, this._tableName, DynamoDBEntryConversion.V2);
+        var table = Table.LoadTable(this.Client, this._tableName, DynamoDBEntryConversion.V2);
 
         var board = new Document();
 

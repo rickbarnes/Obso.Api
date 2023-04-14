@@ -1,11 +1,14 @@
 using Engine;
+using Engine.Board;
 using IRepository;
 using IRepository.Boards;
 using IServices;
+using IServices.Board;
 using Microsoft.OpenApi.Models;
 using Repository;
 using Repository.Board;
 using Services;
+using Services.Board;
 
 namespace Obso.Api;
 
@@ -48,16 +51,18 @@ public sealed class Startup
         this.ConfigureTest(services);
         this.ConfigureBoard(services);
     }
-    
+
     private void ConfigureTest(IServiceCollection services)
     {
         services.AddSingleton<ITestService, TestService>();
         services.AddSingleton<ITestEngine, TestEngine>();
         services.AddSingleton<ITestRepository, TestRepository>();
     }
-    
+
     private void ConfigureBoard(IServiceCollection services)
     {
+        services.AddSingleton<IBoardService, BoardService>();
+        services.AddSingleton<IBoardEngine, BoardEngine>();
         services.AddSingleton<IBoardRepository, BoardRepository>();
     }
 
