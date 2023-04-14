@@ -10,4 +10,8 @@
     <ProjectReference Include="..\IRepository\IRepository.csproj" />
   </ItemGroup>
 
+  <ItemGroup>
+    <PackageReference Include="AWSSDK.DynamoDBv2" Version="3.7.102.26" />
+  </ItemGroup>
+
 </Project>

@@ -1,8 +1,10 @@
 using Engine;
 using IRepository;
+using IRepository.Boards;
 using IServices;
 using Microsoft.OpenApi.Models;
 using Repository;
+using Repository.Board;
 using Services;
 
 namespace Obso.Api;
@@ -43,9 +45,20 @@ public sealed class Startup
 
     private void ConfigureDependencyInjection(IServiceCollection services)
     {
+        this.ConfigureTest(services);
+        this.ConfigureBoard(services);
+    }
+    
+    private void ConfigureTest(IServiceCollection services)
+    {
         services.AddSingleton<ITestService, TestService>();
         services.AddSingleton<ITestEngine, TestEngine>();
         services.AddSingleton<ITestRepository, TestRepository>();
+    }
+    
+    private void ConfigureBoard(IServiceCollection services)
+    {
+        services.AddSingleton<IBoardRepository, BoardRepository>();
     }
 
     private void ConfigureSwagger(IServiceCollection services)
