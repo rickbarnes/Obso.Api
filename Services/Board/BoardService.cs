@@ -16,5 +16,15 @@ public sealed class BoardService : IBoardService
     public async Task<BoardEntity?> GetBoardById(Guid tenantId, Guid boardId)
     {
         return await this._engine.GetBoardById(tenantId, boardId);
+    }    
+    
+    public async Task<BoardEntity> AddBoard(BoardEntity board)
+    {
+        return await this._engine.AddBoard(board);
+    }    
+    
+    public async Task<bool> UpdateBoard(BoardEntity board)
+    {
+        return await this._engine.UpdateBoard(board);
     }
 }

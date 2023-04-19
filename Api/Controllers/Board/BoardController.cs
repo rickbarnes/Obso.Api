@@ -1,3 +1,4 @@
+using Domain.Board;
 using IServices.Board;
 using Microsoft.AspNetCore.Mvc;
 
@@ -26,5 +27,23 @@ public sealed class BoardController : Controller
         }
         
         return this.Ok(result);
+    }
+
+    [Route("addBoard")]
+    [HttpPost]
+    public async Task<IActionResult> Add(BoardEntity board)
+    {
+        var result = await this._service.AddBoard(board);
+
+        return this.Ok(result);
+    }    
+    
+    [Route("updateBoard")]
+    [HttpPost]
+    public async Task<IActionResult> Update(BoardEntity board)
+    {
+        var result = await this._service.UpdateBoard(board);
+
+        return !result ? this.BadRequest() : this.Ok(result);
     }
 }

@@ -1,14 +1,20 @@
 using Engine;
 using Engine.Board;
+using Engine.Column;
+using IEngine.Column;
 using IRepository;
 using IRepository.Boards;
+using IRepository.Column;
 using IServices;
 using IServices.Board;
+using IServices.Column;
 using Microsoft.OpenApi.Models;
 using Repository;
 using Repository.Board;
+using Repository.Column;
 using Services;
 using Services.Board;
+using Services.Column;
 
 namespace Obso.Api;
 
@@ -50,6 +56,7 @@ public sealed class Startup
     {
         this.ConfigureTest(services);
         this.ConfigureBoard(services);
+        this.ConfigureColumn(services);
     }
 
     private void ConfigureTest(IServiceCollection services)
@@ -64,6 +71,13 @@ public sealed class Startup
         services.AddSingleton<IBoardService, BoardService>();
         services.AddSingleton<IBoardEngine, BoardEngine>();
         services.AddSingleton<IBoardRepository, BoardRepository>();
+    }
+
+    private void ConfigureColumn(IServiceCollection services)
+    {
+        services.AddSingleton<IColumnService, ColumnService>();
+        services.AddSingleton<IColumnEngine, ColumnEngine>();
+        services.AddSingleton<IColumnRepository, ColumnRepository>();
     }
 
     private void ConfigureSwagger(IServiceCollection services)

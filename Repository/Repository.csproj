@@ -8,10 +8,12 @@
 
   <ItemGroup>
     <ProjectReference Include="..\IRepository\IRepository.csproj" />
+    <ProjectReference Include="..\IServices\IServices.csproj" />
   </ItemGroup>
 
   <ItemGroup>
     <PackageReference Include="AWSSDK.DynamoDBv2" Version="3.7.102.26" />
+    <PackageReference Include="Microsoft.Extensions.Configuration" Version="7.0.0" />
   </ItemGroup>
 
   <ItemGroup>

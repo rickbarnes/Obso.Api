@@ -60,32 +60,39 @@ public sealed class BoardRepository : BaseRepository, IBoardRepository
         return null;
     }
 
-    public async Task Add(BoardEntity boardEntity)
+    public async Task<BoardEntity> Add(BoardEntity boardEntity)
     {
         var table = Table.LoadTable(this.Client, this._tableName, DynamoDBEntryConversion.V2);
 
         var board = new Document();
 
         board["PK"] = "Board";
-        board["SK"] = this.BuildSK(boardEntity.TenantId, boardEntity.BoardId);
+        board["SK"] = this.BuildSK(boardEntity.TenantId, boardEntity.Id);
         board["Name"] = boardEntity.Name;
+        board["BackgroundType"] = boardEntity.BackgroundType;
+        board["BackgroundColor"] = boardEntity.BackgroundColor;
+        board["BackgroundImageUrl"] = boardEntity.BackgroundImageUrl;
+        board["TenantId"] = boardEntity.TenantId;
 
         await table.PutItemAsync(board);
+
+        return boardEntity;
     }
 
-    public async Task Update(BoardEntity boardEntity)
+    public async Task<bool> Update(BoardEntity boardEntity)
     {
         var table = Table.LoadTable(this.Client, this._tableName, DynamoDBEntryConversion.V2);
 
         var board = new Document();
 
         board["PK"] = "Board";
-        board["SK"] = this.BuildSK(boardEntity.TenantId, boardEntity.BoardId);
-        board["OwnerId"] = Guid.NewGuid();
+        board["SK"] = this.BuildSK(boardEntity.TenantId, boardEntity.Id);
+        board["BackgroundType"] = boardEntity.BackgroundType;
 
-        await table.UpdateItemAsync(board);
+        var result = await table.UpdateItemAsync(board);
+
+        return result != null;
     }
-
 
     private string BuildSK(Guid tenantId, Guid boardId)
     {
@@ -98,8 +105,12 @@ public sealed class BoardRepository : BaseRepository, IBoardRepository
 
         return new BoardEntity
         {
-            BoardId = Guid.Parse(splitSK[3]),
+            Id = Guid.Parse(splitSK[3]),
             Name = item["Name"].S,
+            BackgroundType = Convert.ToInt32(item["BackgroundType"].N),
+            BackgroundColor = item["BackgroundColor"].S,
+            BackgroundImageUrl = item["BackgroundImageUrl"].S,
+            OwnerId = item["OwnerId"].S,
             TenantId = Guid.Parse(splitSK[1])
         };
     }
